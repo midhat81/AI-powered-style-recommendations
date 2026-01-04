@@ -1,36 +1,203 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 StyleAI - AI-Powered Outfit Recommender
 
-## Getting Started
+An intelligent outfit recommendation system powered by **Google Gemini AI** and **Stable Diffusion** that helps you discover your perfect style with both **AI-generated descriptions** and **visual outfit images** in seconds.
 
-First, run the development server:
+![StyleAI Banner](https://via.placeholder.com/1200x400/8B5CF6/FFFFFF?text=StyleAI+-+AI+Outfit+Recommender)
 
+## ✨ Features
+
+- 🤖 **Dual AI-Powered Generation** - Get personalized outfit suggestions using Google Gemini 2.5 Flash + AI-generated outfit images via Stable Diffusion
+- 🖼️ **AI Image Generation** - Visualize your perfect outfit with AI-generated fashion images
+- 📸 **Photo Upload** - Upload your photo with drag-and-drop support
+- 🎨 **Style Selection** - Choose from 6 different style categories (Casual, Formal, Streetwear, Bohemian, Athletic, Elegant)
+- 🌈 **Color Palette** - Select up to 3 colors for your perfect outfit
+- 💾 **Download & Share** - Save your outfit recommendations and images
+- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile
+- ⚡ **Real-time Generation** - Get instant AI-powered fashion advice with visual previews
+- 🎯 **Interactive UI** - Smooth animations and intuitive 4-step design
+
+## 🚀 Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **AI Models:** 
+  - Google Gemini 2.5 Flash (Text Generation)
+  - Stable Diffusion XL (Image Generation)
+- **AI SDK:** Vercel AI SDK (@ai-sdk/google)
+- **Image Generation:** Hugging Face Inference API
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Notifications:** React Hot Toast
+- **Deployment:** Vercel
+
+## 📦 Installation
+
+1. **Clone the repository:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/midhat81/AI-powered-style-recommendations.git
+cd AI-powered-style-recommendations
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up environment variables:**
+   
+   Create a `.env.local` file in the root directory:
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_api_key_here
+HUGGINGFACE_API_KEY=your_huggingface_token_here
+```
+   
+   **Get your API keys:**
+   - **Google Gemini:** [Google AI Studio](https://aistudio.google.com/app/apikey)
+   - **Hugging Face:** [Hugging Face Settings](https://huggingface.co/settings/tokens)
+     - Create a token with "Inference" permission enabled
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Run the development server:**
+```bash
+npm run dev
+```
 
-## Learn More
+5. **Open [http://localhost:3000](http://localhost:3000)**
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 How It Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Upload Your Photo** - Drag and drop or select an image
+2. **Choose Your Style** - Select from Casual, Formal, Streetwear, Bohemian, Athletic, or Elegant
+3. **Pick Your Colors** - Choose 1-3 colors for your outfit palette
+4. **Generate Outfit** - AI creates:
+   - ✨ **Detailed text description** with styling tips
+   - 🖼️ **AI-generated outfit image** visualizing your perfect look
+5. **Download & Share** - Save both text and image!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
+```
+ai-powered-style-recommendations/
+├── app/
+│   ├── api/
+│   │   └── outfit/
+│   │       └── generate/          # AI generation endpoint (text + image)
+│   ├── recommend/
+│   │   └── _components/           # Upload, style, color, preview components
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── common/                    # Reusable UI components
+│   └── motion/                    # Animation components
+├── lib/
+│   ├── ai/                        # Gemini AI & Image generation config
+│   ├── utils/                     # Helper functions
+│   └── validators/                # Input validation
+├── types/                         # TypeScript definitions
+└── public/                        # Static assets
+```
 
-## Deploy on Vercel
+## 🎨 Key Features Explained
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dual AI Generation System
+The app uses **two powerful AI models**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Google Gemini 2.5 Flash** - Generates detailed outfit recommendations including:
+   - Complete outfit description
+   - Styling tips
+   - Color coordination advice
+   - Occasion-appropriate suggestions
+   - Alternative options
+
+2. **Stable Diffusion XL** (via Hugging Face) - Creates visual representations:
+   - High-quality fashion photography style images
+   - Based on your selected style and colors
+   - Professional studio lighting aesthetic
+   - Clean, detailed clothing visualization
+
+### Multi-Step Form
+Intuitive 4-step process with:
+- Progress indicator
+- Form validation
+- Smooth transitions
+- Back/Next navigation
+
+### File Upload
+Advanced upload system with:
+- Drag and drop support
+- Image preview
+- File type validation (JPG, PNG, WEBP)
+- Size validation (max 5MB)
+- Error handling
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com)
+3. Import your repository
+4. Add environment variables:
+   - `GOOGLE_GENERATIVE_AI_API_KEY`
+   - `HUGGINGFACE_API_KEY`
+5. Deploy! 🚀
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/midhat81/AI-powered-style-recommendations)
+
+## 📝 Environment Variables
+
+| Variable | Description | Required | Get It From |
+|----------|-------------|----------|-------------|
+| `GOOGLE_GENERATIVE_AI_API_KEY` | Your Google Gemini API key for text generation | Yes | [Google AI Studio](https://aistudio.google.com/app/apikey) |
+| `HUGGINGFACE_API_KEY` | Your Hugging Face token for image generation | Yes | [Hugging Face](https://huggingface.co/settings/tokens) |
+
+## 🎬 Demo
+
+[Add your demo GIF or screenshots here]
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Google Gemini AI** for powering the text recommendations
+- **Hugging Face** for providing free image generation API
+- **Stability AI** for the Stable Diffusion XL model
+- **Vercel** for the AI SDK and hosting platform
+- **Next.js** team for the amazing framework
+
+## 🐛 Known Issues
+
+- Image generation may take 10-30 seconds depending on API response time
+- Free tier rate limits apply for Hugging Face API
+
+## 🔮 Future Enhancements
+
+- [ ] Add more style categories
+- [ ] Multiple outfit image variations
+- [ ] Save favorite outfits to user profile
+- [ ] Social sharing with preview cards
+- [ ] Integration with shopping platforms
+- [ ] Virtual try-on features
+
+## 📧 Contact
+
+**Midhat** - [@midhat81](https://github.com/midhat81)
+
+Project Link: [https://github.com/midhat81/AI-powered-style-recommendations](https://github.com/midhat81/AI-powered-style-recommendations)
+
+---
+
+⭐ **If you found this project helpful, please give it a star!**
+
+Made with ❤️ and AI
