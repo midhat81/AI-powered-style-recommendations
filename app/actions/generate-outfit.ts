@@ -37,11 +37,10 @@ export async function generateOutfit({
       occasion: occasion || 'everyday wear',
     });
 
-    // Generate outfit
+    // Generate outfit (removed maxTokens - not supported in this version)
     const result = await generateText({
       model: geminiModel,
       prompt: prompt,
-      maxTokens: 1000,
       temperature: 0.7,
     });
 

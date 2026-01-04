@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           error: 'Invalid input',
-          details: validation.error.errors,
+          details: validation.error.issues,
         },
         { status: 400 }
       );
@@ -43,7 +43,6 @@ export async function POST(request: NextRequest) {
     const result = await generateText({
       model: geminiModel,
       prompt: prompt,
-      maxTokens: 1000,
       temperature: 0.7,
     });
 
