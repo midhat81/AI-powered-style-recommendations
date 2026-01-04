@@ -1,6 +1,13 @@
 # 🎨 StyleAI - AI-Powered Outfit Recommender
 
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://ai-powered-style-recommendations-8w7iy4rd0.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 An intelligent outfit recommendation system powered by **Google Gemini AI** and **Stable Diffusion** that helps you discover your perfect style with both **AI-generated descriptions** and **visual outfit images** in seconds.
+
+**🌐 [Try It Live!](https://ai-powered-style-recommendations-8w7iy4rd0.vercel.app)**
 
 ![StyleAI Banner](https://via.placeholder.com/1200x400/8B5CF6/FFFFFF?text=StyleAI+-+AI+Outfit+Recommender)
 
@@ -150,9 +157,11 @@ Advanced upload system with:
 | `GOOGLE_GENERATIVE_AI_API_KEY` | Your Google Gemini API key for text generation | Yes | [Google AI Studio](https://aistudio.google.com/app/apikey) |
 | `HUGGINGFACE_API_KEY` | Your Hugging Face token for image generation | Yes | [Hugging Face](https://huggingface.co/settings/tokens) |
 
-## 🎬 Demo
+## 🎬 Live Demo
 
-[Add your demo GIF or screenshots here]
+**🌐 Live App:** [https://ai-powered-style-recommendations-8w7iy4rd0.vercel.app](https://ai-powered-style-recommendations-8w7iy4rd0.vercel.app)
+
+Try it now and generate your perfect AI-powered outfit with visual recommendations!
 
 ## 🤝 Contributing
 
