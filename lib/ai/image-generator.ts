@@ -13,7 +13,9 @@ export async function generateOutfitImage(prompt: string): Promise<Blob> {
       }
     });
 
-    return response;
+    // Cast through unknown to Blob
+    return response as unknown as Blob;
+    
   } catch (error) {
     console.error('Image generation error:', error);
     throw new Error('Failed to generate outfit image');
@@ -27,7 +29,6 @@ export function createImagePrompt(
 ): string {
   const colorList = colors.join(' and ');
   
-  // Extract key outfit items from description
   const simplifiedPrompt = `Professional fashion photography of a ${style} style outfit, 
 featuring ${colorList} colors, high quality fashion photography, clean white background, 
 studio lighting, detailed clothing, fashionable, stylish, 4k, ultra detailed`;
